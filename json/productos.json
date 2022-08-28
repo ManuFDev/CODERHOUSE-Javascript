@@ -1,0 +1,55 @@
+[{
+        "precio": 4000,
+        "id": 1,
+        "title": "Cuadro 1",
+        "thumbnailUrl": "https://picsum.photos/id/122/367/267"
+    },
+    {
+        "precio": 4875,
+        "id": 2,
+        "title": "Cuadro 2",
+        "thumbnailUrl": "https://picsum.photos/id/121/367/267"
+    },
+    {
+        "precio": 3000,
+        "id": 3,
+        "title": "Cuadro 3",
+        "thumbnailUrl": "https://picsum.photos/id/15/367/267"
+    },
+    {
+        "precio": 5000,
+        "id": 4,
+        "title": "Cuadro 4",
+        "thumbnailUrl": "https://picsum.photos/id/164/367/267"
+    },
+    {
+        "precio": 7500,
+        "id": 5,
+        "title": "Cuadro 5",
+        "thumbnailUrl": "https://picsum.photos/id/171/367/267"
+    },
+    {
+        "precio": 2400,
+        "id": 6,
+        "title": "Cuadro 6",
+        "thumbnailUrl": "https://picsum.photos/id/184/367/267"
+    },
+    {
+        "precio": 1350,
+        "id": 7,
+        "title": "Cuadro 7",
+        "thumbnailUrl": "https://picsum.photos/id/188/367/267"
+    },
+    {
+        "precio": 3000,
+        "id": 8,
+        "title": "Cuadro 8",
+        "thumbnailUrl": "https://picsum.photos/id/230/367/267"
+    },
+    {
+        "precio": 9300,
+        "id": 9,
+        "title": "Cuadro 9",
+        "thumbnailUrl": "https://picsum.photos/id/274/367/267"
+    }
+]
