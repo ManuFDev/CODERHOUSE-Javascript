@@ -1,4 +1,4 @@
-
+ // declaro las variables que voy a utilizar 
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -8,6 +8,10 @@ const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
+
+
+
+/* evento para traer items del local storage al cargar la pagina y pintarlos  en el dom */
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
     if (localStorage.getItem('carrito')) {
@@ -15,9 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         pintarCarrito()
     }
 })
+
+// evento para agregar al carrito
 cards.addEventListener('click', e => {
     addCarrito(e)
 })
+
+//evento para aumentar o disminuir
 items.addEventListener('click', e => {
     btnAccion(e)
 })
@@ -34,6 +42,9 @@ const fetchData = async () => {
     }
 } 
 
+/**
+ funcion que pinta en el DOM los productos del JSON
+ */
 const pintarCards = data => {
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.title
@@ -53,6 +64,9 @@ const addCarrito = e => {
 }
 
 
+/**
+ funcion para crear los objetos y agregarlos al carrito
+ */
 const setCarrito = objeto => {
     const producto = {
         id: objeto.querySelector('.btn-dark').dataset.id,
@@ -71,6 +85,7 @@ const setCarrito = objeto => {
     pintarCarrito()
 }
 
+// funcion para pintar los productos del JSON y pushearlos al local storage
 const pintarCarrito = () => {
     items.innerHTML = ''
     Object.values(carrito).forEach(producto => {
@@ -91,6 +106,8 @@ const pintarCarrito = () => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
+
+//funcion productos carrito
 const pintarFooter = () => {
     footer.innerHTML = ''
     if (Object.keys(carrito).length === 0) {
@@ -100,6 +117,8 @@ const pintarFooter = () => {
         return
     }
 
+
+    //funcion para sumar/restar precios de prodcutos
     const nCantidad = Object.values(carrito).reduce((acc, {
         cantidad
     }) => acc + cantidad, 0)
@@ -115,6 +134,8 @@ const pintarFooter = () => {
     fragment.appendChild(clone)
     footer.appendChild(fragment)
 
+
+    //funcion boton vaciar carrito
     const btnVaciar = document.getElementById('vaciar-carrito')
     btnVaciar.addEventListener('click', () => {
         carrito = {}
@@ -129,6 +150,7 @@ const pintarFooter = () => {
         pintarCarrito()
     })
 
+    //funcion boton finalizar compra carrito
     const btnFin = document.getElementById('finalizar-compra')
     btnFin.addEventListener('click', () => {
         carrito = {}
